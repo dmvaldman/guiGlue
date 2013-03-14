@@ -1,0 +1,14 @@
+body, html { 
+	overflow: hidden;
+}
+
+#container{
+	width: 200px;
+	margin: 0 auto;
+	padding-top : 200px;
+}
+
+#shape{
+	height : 200px;
+	width : 200px;
+}
