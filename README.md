@@ -33,7 +33,7 @@ How it works
 			value : 0.8,
 			onChange : function(){ ... }
 		}
-	}
+	};
 
 No more magic variables defined in the GUI as opposed to in your parameter folder!
 
@@ -79,7 +79,7 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 				step: .1
 			}
 		}	
-	}
+	};
 
 Stripped Parameter File
 -----------------------------------
@@ -98,7 +98,7 @@ These parameter files can get pretty bloated. Though dat.gui may need all the mi
 			value : 0.8,
 			onChange : function(){ ... }
 		}
-	}
+	};
 
 	var params = guiGlue(paramsGUI);	//params = {var1 : 0.8, var2 : 0.8}
 
@@ -107,9 +107,9 @@ And this works as you'd expect for nested objects.
 Options
 -----------------------------------
 
-Pass any options defined for dat.gui into guiGlue via an optional (no pun intended) second parameter
+Pass any options defined for dat.gui into guiGlue via an optional (no pun intended) second parameter.
 
-	guiGlue(paramsGUI, options)
+	guiGlue(paramsGUI, options);
 
-We add one extra options currently, which is whether you want your folders auto-expanded or not. To collapse all folders pass in {folded : true}, otherwise it defaults to {folded : false}.
+We add one extra options currently, which is whether you want your folders auto-expanded or not. To collapse all folders pass in <code>{folded : true}</code>, otherwise it defaults to <code>{folded : false}</code>.
 
