@@ -6,16 +6,16 @@ Google's [dat.gui] (http://workshop.chromeexperiments.com/examples/gui/#1--Basic
 How it works
 --------------------------------
 
-*Insead of*
+*Insead of...*
 
 	var params = {
-	  var1 : 0.8,
+	  var1 : 'a',
 	  var2 : 1
 	};
 
 	window.onload = function() {
 	  var gui = new dat.GUI();
-	  gui.add(params, 'var1', -5, 5);
+	  gui.add(params, 'var1', {'a', 'b', 'c'});
 	  gui.add(params, 'var2', 0, 1).step(0.01).onChange(function(){ ... });
 	};
 
@@ -23,10 +23,9 @@ How it works
 
 	var params = {
 		var1 : {
-			type : 'range',
-			value : 0.8,
-			min : -5,
-			max : 5
+			type : 'selector',
+			value : 'a',
+			options : {'a', 'b', 'c'}
 		},
 		var2 : {
 			type : 'range',
@@ -98,10 +97,9 @@ These parameter files can get pretty bloated. Though dat.gui may need all the mi
 
 	var params = {
 		var1 : {
-			type : 'range',
-			value : 0.8,
-			min : -5,
-			max : 5
+			type : 'selector',
+			value : 'a',
+			options : {'a', 'b', 'c'}
 		},
 		var2 : {
 			type : 'range',
@@ -113,7 +111,7 @@ These parameter files can get pretty bloated. Though dat.gui may need all the mi
 		}
 	};
 
-	var params = guiGlue(paramsGUI);	//params = {var1 : 0.8, var2 : 1}
+	var params = guiGlue(paramsGUI);	//params = {var1 : 'a', var2 : 1}
 
 And this works as you'd expect for nested objects.
 
