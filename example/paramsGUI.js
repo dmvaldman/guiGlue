@@ -23,7 +23,6 @@ var paramsGUI = {
         scale : {
 
             all : {
-                display : 'range',
                 value: 1,
                 min : 0,
                 max : 5,

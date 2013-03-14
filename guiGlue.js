@@ -1,3 +1,5 @@
+//encapsulate step in range
+
 //returns params, a stripped version of paramsGUI, without all the GUI fluff
 function setParameters(paramsGUI, optionsGUI){
 
@@ -69,13 +71,14 @@ function setParameters(paramsGUI, optionsGUI){
             var handle;
             params[key] = options.value;
 
-            switch (options.display){
+            var display = options.display || '';
+            switch (display){
                 case 'range':
-                    handle = folder.add(params, key, options.min, options.max);
+                    if (options.step)
+                        handle = folder.add(params, key, options.min, options.max).step(options.step);
+                    else
+                        handle = folder.add(params, key, options.min, options.max);
                     break;
-                case 'range step':
-                    handle = folder.add(params, key, options.min, options.max).step(options.step);
-                    break;                
                 case 'selector':
                     handle = folder.add(params, key, options.choices);
                     break;
