@@ -1,7 +1,7 @@
 guiGlue.js - a dat.gui wrapper
 ================================
 
-Google's [dat.gui] (http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage) is a great tool for exposing parameters in a web experiment, however I found the syntax cumbersome. I wanted a simple way to abstract all the parameters needed, with all the neat options dat.gui supports, like min/max for range values, and options for selectors, and onChange events and listeners and stepping etc etc, but I wanted to define them all in one place.
+Google's [dat.gui](http://workshop.chromeexperiments.com/examples/gui/#1--Basic-Usage) is a great tool for exposing parameters in a web experiment, however I found the syntax cumbersome. I wanted a simple way to abstract all the parameters needed, with all the neat options dat.gui supports, like min/max for range values, and options for selectors, and onChange events and listeners and stepping etc etc, but I wanted to define them all in one place.
 
 How it works
 --------------------------------
@@ -41,7 +41,7 @@ How it works
 		guiGlue(paramsGUI);
 	};
 
-No more magic variables defined in the GUI as opposed to in your parameter folder!
+No more magic variables defined in the GUI as opposed to in your parameter file!
 
 Subfolders
 -------------------------------------
@@ -93,7 +93,7 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 Stripped Parameter File
 -----------------------------------
 
-These parameter files can get pretty bloated. Though dat.gui may need all the min/max stuff, your code likely doesn't. Because of this, a call to guiGlue returns a stripped version of the parameter file, where all that remains are the value keys, and nothing else. For example
+The parameter object can get pretty bloated. Though dat.gui may need all the min/max stuff, your code likely doesn't. Because of this, a call to guiGlue returns a stripped version of the parameter file, where all that remains are the value keys. For example
 
 	var params = {
 		var1 : {
@@ -113,7 +113,7 @@ These parameter files can get pretty bloated. Though dat.gui may need all the mi
 
 	var params = guiGlue(paramsGUI);	//params = {var1 : 'a', var2 : 1}
 
-And this works as you'd expect for nested objects.
+This works as you'd expect for nested objects.
 
 Options
 -----------------------------------
