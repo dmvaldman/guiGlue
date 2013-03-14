@@ -10,13 +10,13 @@ How it works
 
 	var params = {
 	  var1 : 0.8,
-	  var2 : 10
+	  var2 : 1
 	};
 
 	window.onload = function() {
 	  var gui = new dat.GUI();
 	  gui.add(params, 'var1', -5, 5);
-	  gui.add(params, 'var2').onChange(function(){ ... });
+	  gui.add(params, 'var2', 0, 1).step(0.01).onChange(function(){ ... });
 	};
 
 *We do...*
@@ -30,9 +30,16 @@ How it works
 		},
 		var2 : {
 			type : 'range',
-			value : 0.8,
+			value : 1,
+			min : 0,
+			max : 1,
+			step : 0.01,
 			onChange : function(){ ... }
 		}
+	};
+
+	window.onload = function(){
+		guiGlue(paramsGUI);
 	};
 
 No more magic variables defined in the GUI as opposed to in your parameter folder!
@@ -52,14 +59,18 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 			},
 			var2 : {
 				type : 'range',
-				value : 0.8,
+				value : 1,
+				min : 0,
+				max : 1,
+				step : .01,
 				onChange : function(){ ... }
 			},
 			subFolder : {
 				var1 : {
 					type : 'selector',
 					value : 'a',
-					options : ['a', 'b', 'c']
+					options : ['a', 'b', 'c'],
+					listen : true
 				},
 				subsubFolder : {
 					var1 : {
@@ -75,8 +86,7 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 				type : 'range',
 				value : 1,
 				min: 0,
-				max: 1,
-				step: .1
+				max: 1
 			}
 		}	
 	};
@@ -86,7 +96,7 @@ Stripped Parameter File
 
 These parameter files can get pretty bloated. Though dat.gui may need all the min/max stuff, your code likely doesn't. Because of this, a call to guiGlue returns a stripped version of the parameter file, where all that remains are the value keys, and nothing else. For example
 
-	var paramsGUI = {
+	var params = {
 		var1 : {
 			type : 'range',
 			value : 0.8,
@@ -95,12 +105,15 @@ These parameter files can get pretty bloated. Though dat.gui may need all the mi
 		},
 		var2 : {
 			type : 'range',
-			value : 0.8,
+			value : 1,
+			min : 0,
+			max : 1,
+			step : 0.01,
 			onChange : function(){ ... }
 		}
 	};
 
-	var params = guiGlue(paramsGUI);	//params = {var1 : 0.8, var2 : 0.8}
+	var params = guiGlue(paramsGUI);	//params = {var1 : 0.8, var2 : 1}
 
 And this works as you'd expect for nested objects.
 
