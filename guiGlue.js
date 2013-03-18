@@ -23,7 +23,7 @@ function setParameters(paramsGUI, optionsGUI){
         var gui = new dat.GUI(optionsGUI);
 
         //walk the parameter tree
-        unfurl(paramsGUI, gui, params)
+        unfurl(paramsGUI, gui, params);
 
         function unfurl(obj, folder, params){
 
@@ -60,9 +60,10 @@ function setParameters(paramsGUI, optionsGUI){
                     else
                         break;
                 }
+                
                 return isLeaf;
 
-            };
+            }
 
         };
 
@@ -72,6 +73,7 @@ function setParameters(paramsGUI, optionsGUI){
             params[key] = options.value;
 
             var display = options.display || '';
+
             switch (display){
                 case 'range':
                     if (options.step)

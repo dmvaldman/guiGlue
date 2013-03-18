@@ -113,7 +113,7 @@ The parameter object can get pretty bloated. Though dat.gui may need all the min
 
 	var params = guiGlue(paramsGUI);	//params = {var1 : 'a', var2 : 1}
 
-This works as you'd expect for nested objects.
+This works as you'd expect for nested objects. The most important part is that these stripped parameters are still synced with the GUI. Changes in the GUI change the value of the parameter, and if <code>{listen : true}</code> is set, then changes in the parameter are mirrored in the GUI.
 
 Options
 -----------------------------------
