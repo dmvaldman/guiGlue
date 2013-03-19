@@ -60,10 +60,10 @@ function setParameters(paramsGUI, optionsGUI){
                     else
                         break;
                 }
-                
+
                 return isLeaf;
 
-            }
+            };
 
         };
 

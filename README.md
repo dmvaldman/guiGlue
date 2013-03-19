@@ -41,7 +41,7 @@ How it works
 		guiGlue(paramsGUI);
 	};
 
-No more magic variables defined in the GUI as opposed to in your parameter file!
+Looks like more lines of code! Well, yes it is, but there are no more magic variables defined in the GUI as opposed to in your parameter file!... You'll thank me later.
 
 Subfolders
 -------------------------------------
