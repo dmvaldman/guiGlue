@@ -1,7 +1,5 @@
-//encapsulate step in range
-
 //returns params, a stripped version of paramsGUI, without all the GUI fluff
-function setParameters(paramsGUI, optionsGUI){
+function guiGlue(paramsGUI, optionsGUI){
 
     //pass options to GUI e.g., { autoPlace: false }
     optionsGUI = optionsGUI || {};
