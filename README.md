@@ -23,12 +23,12 @@ How it works
 
 	var params = {
 		var1 : {
-			type : 'selector',
+			display : 'selector',
 			value : 'a',
 			options : {'a', 'b', 'c'}
 		},
 		var2 : {
-			type : 'range',
+			display : 'range',
 			value : 1,
 			min : 0,
 			max : 1,
@@ -51,13 +51,13 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 	var params = {
 		folder1 : {
 			var1 : {
-				type : 'range',
+				display : 'range',
 				value : 0.8,
 				min : -5,
 				max : 5
 			},
 			var2 : {
-				type : 'range',
+				display : 'range',
 				value : 1,
 				min : 0,
 				max : 1,
@@ -66,14 +66,14 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 			},
 			subFolder : {
 				var1 : {
-					type : 'selector',
+					display : 'selector',
 					value : 'a',
 					options : ['a', 'b', 'c'],
 					listen : true
 				},
 				subsubFolder : {
 					var1 : {
-						type : 'color',
+						display : 'color',
 						value : '#bada55',
 						listen : true
 					}
@@ -82,7 +82,7 @@ Best of all... automatic subfolders! Just make nested JSON objects.
 		},
 		folder2 : {
 			var1 : {
-				type : 'range',
+				display : 'range',
 				value : 1,
 				min: 0,
 				max: 1
@@ -97,12 +97,12 @@ The parameter object can get pretty bloated. Though dat.gui may need all the min
 
 	var params = {
 		var1 : {
-			type : 'selector',
+			display : 'selector',
 			value : 'a',
 			options : {'a', 'b', 'c'}
 		},
 		var2 : {
-			type : 'range',
+			display : 'range',
 			value : 1,
 			min : 0,
 			max : 1,
