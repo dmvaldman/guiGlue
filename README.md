@@ -25,7 +25,7 @@ How it works
 		var1 : {
 			display : 'selector',
 			value : 'a',
-			options : {'a', 'b', 'c'}
+			options : {'choice 1':'value 1', 'choice 2':'value 2', 'choice 3':'value 3'}
 		},
 		var2 : {
 			display : 'range',
@@ -99,7 +99,8 @@ The parameter object can get pretty bloated. Though dat.gui may need all the min
 		var1 : {
 			display : 'selector',
 			value : 'a',
-			options : {'a', 'b', 'c'}
+			options : {'choice 1':'value 1', 'choice 2':'value 2', 'choice 3':'value 3'},
+			onChange : function(value) {}
 		},
 		var2 : {
 			display : 'range',
