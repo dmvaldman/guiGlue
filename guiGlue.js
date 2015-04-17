@@ -49,21 +49,24 @@ function guiGlue(paramsGUI, optionsGUI){
             //it is critical that none of the tracked parameters is itself an object
             function isLeaf(obj){
 
-                var isLeaf = true;
+                var Leaf = true;
                 for (var key in obj){
-                    if (isLeaf){
+
+                    if (key === 'choices' && obj.display === 'selector') continue;
+
+                    if (Leaf){
                         var isObj = (Object.prototype.toString.call( obj[key] ) != '[object Object]');
-                        isLeaf = isLeaf && isObj;
+                        Leaf = Leaf && isObj;
                     }
                     else
-                        break;
+                        continue;
                 }
 
-                return isLeaf;
+                return Leaf;
 
-            };
+            }
 
-        };
+        }
 
         function addToFolder(key, obj, options, folder, params){
 
@@ -90,7 +93,7 @@ function guiGlue(paramsGUI, optionsGUI){
                 default:
                     handle = folder.add(params, key);
                     break;
-            };
+            }
 
             if (handle && options.onChange)
                 handle.onChange(options.onChange);
@@ -101,10 +104,10 @@ function guiGlue(paramsGUI, optionsGUI){
             if (handle && options.listen)
                 handle.listen();
 
-        };
+        }
 
         return gui;
 
-    };
+    }
 
-};
+}
