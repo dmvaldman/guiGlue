@@ -25,7 +25,7 @@ How it works
 		var1 : {
 			display : 'selector',
 			value : 'a',
-			options : {'choice 1':'value 1', 'choice 2':'value 2', 'choice 3':'value 3'}
+			choices : {'choice 1':'value 1', 'choice 2':'value 2', 'choice 3':'value 3'}
 		},
 		var2 : {
 			display : 'range',
