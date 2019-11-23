@@ -74,6 +74,7 @@ function guiGlue(paramsGUI, optionsGUI){
             params[key] = options.value;
 
             var display = options.display || '';
+            gui.remember(params);
 
             switch (display){
                 case 'range':
